@@ -1,64 +1,45 @@
-#######################################################################################
-# A default configuration that will be loaded for all jupyter books
-# Users are expected to override these values in their own `_config.yml` file.
-# This is also the "master list" of all allowed keys and values.
-
-#######################################################################################
-# Book settings
-title                       : "A database of the healthy human spinal cord morphometry in the PAM50 template space"  # The title of the book. Will be placed in the left navbar.
-author                      : Jan Valošek, Sandrine Bédard, Miloš Keřkovský, Tomáš Rohan, Julien Cohen-Adad  # The author of the book
-
-#######################################################################################
-# Execution settings
+author: "Jan Valo\u0161ek, Sandrine B\xE9dard, Milo\u0161 Ke\u0159kovsk\xFD, Tom\xE1\
+  \u0161 Rohan, Julien Cohen-Adad"
+bibtex_bibfiles:
+- ../paper.bib
 execute:
-  execute_notebooks         : auto  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
-  cache                     : ""  # A path to the jupyter cache that will be used to store execution artifacs. Defaults to `_build/.jupyter_cache/`
-  exclude_patterns          : []  # A list of patterns to *skip* in execution (e.g. a notebook that takes a really long time)
-  timeout                   : -1  # remove restriction on execution time
-#######################################################################################
-# HTML-specific settings
+  cache: ''
+  exclude_patterns: []
+  execute_notebooks: auto
+  timeout: -1
 html:
-  favicon                   : ""  # A path to a favicon image
-  use_edit_page_button      : false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
-  use_repository_button     : false  # Whether to add a link to your repository button
-  use_issues_button         : false  # Whether to add an "open an issue" button
-  extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
-  extra_footer              : ""  # Will be displayed underneath the footer.
-  google_analytics_id       : ""  # A GA id that can be used to track book views.
-  home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
-  baseurl                   : ""  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
-
-#######################################################################################
-# Launch button settings
-launch_buttons:
-  notebook_interface        : classic  # The interface interactive links will activate ["classic", "jupyterlab"]
-  binderhub_url             : https://test.conp.cloud  # The URL of the Neurolibre BinderHub
-  thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
-
-repository:
-  url                       : https://github.com/valosekj/spinal-cord-morphometric-database  # The URL to your book's repository
-  path_to_book              : "content"  # A path to your book's folder, relative to the repository root.
-  branch                    : main  # Which branch of the repository should be used when creating links
-
-
+  baseurl: ''
+  extra_footer: ''
+  extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  favicon: ''
+  google_analytics_id: ''
+  home_page_in_navbar: true
+  use_edit_page_button: false
+  use_issues_button: false
+  use_repository_button: false
 html_theme_options:
   logo:
-    image_light: "neurolibre-logo.png"
-    image_dark: "neurolibre-logo.png"
-
-#######################################################################################
-
-sphinx:
-  local_extensions          :   # A list of local extensions to load by sphinx specified by "name: path" items
-  recursive_update          : false # A boolean indicating whether to overwrite the Sphinx config (true) or recursively update
-  config                    :   # key-value pairs to directly over-ride the Sphinx configuration
-    bibtex_reference_style: author_year
-    bibtex_default_style: plain
-    bibtex_tooltips: true
-    html_static_path: ['_static']
-    html_css_files: ['custom.css']
-
-bibtex_bibfiles:
-  - ../paper.bib
-
+    image_dark: neurolibre-logo.png
+    image_light: neurolibre-logo.png
+launch_buttons:
+  binderhub_url: https://binder-mcgill.conp.cloud
+  notebook_interface: jupyterlab
+  thebe: false
 only_build_toc_files: true
+repository:
+  branch: main
+  path_to_book: content
+  url: https://github.com/roboneurolibre/PAM50-normalized-metrics-paper
+sphinx:
+  config:
+    bibtex_default_style: plain
+    bibtex_reference_style: author_year
+    bibtex_tooltips: true
+    html_css_files:
+    - custom.css
+    html_static_path:
+    - _static
+  local_extensions: null
+  recursive_update: false
+title: A database of the healthy human spinal cord morphometry in the PAM50 template
+  space
